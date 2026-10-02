@@ -9,7 +9,10 @@ You need Node.js 22.
 ```bash
 cd frontend
 npm install
+cp .env.example .env
 ```
+
+`.env` sets the dev port and the API address Vite proxies. It is not committed. Do not put secrets in it: any `VITE_` name can end up in the browser bundle.
 
 Start the API from the `backend` folder first, then:
 
