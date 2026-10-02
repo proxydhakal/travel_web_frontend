@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #013a63;
+  --color-primary-dark: #012640;
+  --color-secondary: #2a6f97;
+  --color-tertiary: #a9d6e5;
+  --color-accent: #a9d6e5;
+  --color-sun: #2a6f97;
+  --color-sun-dark: #013a63;
+  --color-cream: #fdf5aa;
+  --color-sand: #f7f4ec;
+  --color-ink: #1b2430;
+  --color-muted: #5e6a78;
+  --color-line: #e6e8ee;
+  --color-surface: #f4f6f8;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --shadow-subtle: 0 1px 2px rgb(1 58 99 / 0.06);
+  --shadow-card: 0 12px 32px rgb(1 58 99 / 0.08);
+  --shadow-floating: 0 22px 50px rgb(1 58 99 / 0.16);
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6.5rem;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-sand);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: #a9d6e5;
+    color: #013a63;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-[1240px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-secondary;
+  }
+
+  .display-title {
+    @apply text-[1.7rem] font-bold leading-[1.15] tracking-tight text-primary sm:text-4xl;
+  }
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fade-up 0.7s ease forwards;
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.12s;
+}
+.reveal-delay-2 {
+  animation-delay: 0.22s;
+}
+.reveal-delay-3 {
+  animation-delay: 0.32s;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.35s ease;
+}
+
+.eh-richtext .ck.ck-editor {
+  width: 100%;
+}
+
+.eh-richtext .ck.ck-editor__editable_inline {
+  min-height: 180px;
+  height: auto;
+  resize: vertical;
+  overflow: auto;
+}
+
+.eh-richtext .ck.ck-editor__main {
+  display: flex;
+  flex-direction: column;
+}
+
+.eh-richtext .ck-content .image,
+.eh-richtext .ck-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal-delay-1,
+  .reveal-delay-2,
+  .reveal-delay-3,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

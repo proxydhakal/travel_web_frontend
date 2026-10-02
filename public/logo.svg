@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" role="img" aria-label="Enlighten Himalays">
+  <circle cx="30" cy="18" r="9" fill="#A9D6E5"/>
+  <path d="M6 50 L20 24 L28 36 L38 16 L54 50 Z" fill="#013A63"/>
+  <path d="M16 50 L28 32 L36 42 L44 26 L58 50 Z" fill="#2A6F97"/>
+  <text x="70" y="30" fill="#013A63" font-family="Poppins, Arial, sans-serif" font-size="18" font-weight="700">Enlighten</text>
+  <text x="70" y="48" fill="#2A6F97" font-family="Poppins, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="1.5">HIMALAYS PVT. LTD.</text>
+</svg>
